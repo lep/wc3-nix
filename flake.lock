@@ -1,0 +1,185 @@
+{
+  "nodes": {
+    "common-j": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1676728612,
+        "narHash": "sha256-Hhp8PMvnUkQ8gMnM3VjTq51LkdzjRyl9Tsg0t7Q1+g4=",
+        "owner": "lep",
+        "repo": "common-j",
+        "rev": "329882d10ff54817d719db539f53c399f9bb913b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lep",
+        "repo": "common-j",
+        "type": "github"
+      }
+    },
+    "common-j_2": {
+      "inputs": {
+        "flake-utils": [
+          "jhcr",
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "jhcr",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1676728612,
+        "narHash": "sha256-Hhp8PMvnUkQ8gMnM3VjTq51LkdzjRyl9Tsg0t7Q1+g4=",
+        "owner": "lep",
+        "repo": "common-j",
+        "rev": "329882d10ff54817d719db539f53c399f9bb913b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lep",
+        "repo": "common-j",
+        "type": "github"
+      }
+    },
+    "compressmpq": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1677411464,
+        "narHash": "sha256-Ev/bODLpirGf3iAkH8r3HwiehNNSjNFxvQmJ5OjdeXg=",
+        "owner": "lep",
+        "repo": "compressmpq",
+        "rev": "00321b138aeae3525f29eeec26a8f2d96f55f451",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lep",
+        "repo": "compressmpq",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1676283394,
+        "narHash": "sha256-XX2f9c3iySLCw54rJ/CZs+ZK6IQy7GXNY4nSOyu2QG4=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "3db36a8b464d0c4532ba1c7dda728f4576d6d073",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "jhcr": {
+      "inputs": {
+        "common-j": "common-j_2",
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1677365099,
+        "narHash": "sha256-ph8twD2WanFCD1iPm3gAcENs1M6aQmsBSU9GPNkcm2s=",
+        "owner": "lep",
+        "repo": "jhcr",
+        "rev": "f2c5e10778cf471da30026bf267ac2b9785fb68c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lep",
+        "repo": "jhcr",
+        "type": "github"
+      }
+    },
+    "mpq": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1677083301,
+        "narHash": "sha256-bzOqkUPzXqz97WmuA4vGABPfyxbSN4NcR+atl4INn1w=",
+        "type": "git",
+        "url": "file:/Users/lep/dev/mpq"
+      },
+      "original": {
+        "type": "git",
+        "url": "file:/Users/lep/dev/mpq"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1677351101,
+        "narHash": "sha256-YEVIJJfeewH1pjmGEoVs0bU6lyI5TCPHIXW/kIItjL4=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "84401155e3c99ed730dd798cc2bc96432ffb7941",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "pjass": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1677181663,
+        "narHash": "sha256-KpXG2rALMUn+EzDyDsl5VJSau16Hol19TLNKurcqCWo=",
+        "owner": "lep",
+        "repo": "pjass",
+        "rev": "ac58f84a23afe447621dff7ffd84e36a92295817",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lep",
+        "repo": "pjass",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "common-j": "common-j",
+        "compressmpq": "compressmpq",
+        "flake-utils": "flake-utils",
+        "jhcr": "jhcr",
+        "mpq": "mpq",
+        "nixpkgs": "nixpkgs",
+        "pjass": "pjass"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
