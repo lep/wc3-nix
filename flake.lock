@@ -23,31 +23,6 @@
         "type": "github"
       }
     },
-    "common-j_2": {
-      "inputs": {
-        "flake-utils": [
-          "jhcr",
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "jhcr",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1676728612,
-        "narHash": "sha256-Hhp8PMvnUkQ8gMnM3VjTq51LkdzjRyl9Tsg0t7Q1+g4=",
-        "owner": "lep",
-        "repo": "common-j",
-        "rev": "329882d10ff54817d719db539f53c399f9bb913b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "lep",
-        "repo": "common-j",
-        "type": "github"
-      }
-    },
     "compressmpq": {
       "inputs": {
         "flake-utils": [
@@ -88,7 +63,9 @@
     },
     "jhcr": {
       "inputs": {
-        "common-j": "common-j_2",
+        "common-j": [
+          "common-j"
+        ],
         "flake-utils": [
           "flake-utils"
         ],

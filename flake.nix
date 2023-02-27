@@ -12,6 +12,7 @@
 	#jhcr.url = "git+file:/Users/lep/dev/jass-hot-code-reload";
 	jhcr.inputs.nixpkgs.follows = "nixpkgs";
 	jhcr.inputs.flake-utils.follows = "flake-utils";
+	jhcr.inputs.common-j.follows = "common-j";
 
 	common-j.url = "github:lep/common-j";
 	common-j.inputs.nixpkgs.follows = "nixpkgs";
@@ -33,36 +34,45 @@
 		jhcr-drv = jhcr.defaultPackage.${system};
 		mpq-drv = mpq.defaultPackage.${system};
 		compressmpq-drv = compressmpq.defaultPackage.${system};
+
+		wc3 = pkgs.writeShellScriptBin "wc3" ''
+		    /Applications/Warcraft\ III/_retail_/x86_64/Warcraft\ III.app/Contents/MacOS/Warcraft\ III -launch -nowfpause -windowmode windowed -width 1024 -height 768 -loadfile "$1"
+		'';
+
+
+		jhcr-start = pkgs.writeShellScriptBin "jhcr-start" ''
+		    set -e
+		    pjass ${common-j}/common.j blizzard.j "$1"
+		    ${jhcr-drv}/bin/jhcr init ${common-j}/common.j blizzard.j "$1"
+		    ${pjass-drv}/bin/pjass ${common-j}/common.j blizzard.j jhcr_war3map.j
+		    ${mpq-drv}/bin/mpq add base.w3x jhcr_war3map.j --name war3map.j
+		    ${wc3}/bin/wc3 "$(realpath base.w3x)" &
+		'';
+
+		jhcr-update = pkgs.writeShellScriptBin "jhcr-update" ''
+		    set -e
+		    pjass ${common-j}/common.j blizzard.j "$1"
+		    ${jhcr-drv}/bin/jhcr update "$1" --preload-path ~/Library/Application\ Support/Blizzard/Warcraft\ III/CustomMapData/
+		'';
             in {
+		packages = {
+		    inherit jhcr-update jhcr-start wc3;
+		    inherit pjass compressmpq mpq;
+		};
+
 		devShell = pkgs.mkShell {
 		    env = {
 			commonj = "${common-j}/common.j";
 		    };
-		    shellHook = ''
-			function wc3 {
-			    /Applications/Warcraft\ III/_retail_/x86_64/Warcraft\ III.app/Contents/MacOS/Warcraft\ III -launch -nowfpause -windowmode windowed -width 1024 -height 768 -loadfile "$1"
-			}
-
-			function jhcr_start {
-			    pjass ${common-j}/common.j blizzard.j "$1" || exit 1
-			    ${jhcr-drv}/bin/jhcr init ${common-j}/common.j blizzard.j "$1" || exit 1
-			    ${pjass-drv}/bin/pjass ${common-j}/common.j blizzard.j jhcr_war3map.j || exit 1
-			    ${mpq-drv}/bin/mpq add base.w3x jhcr_war3map.j --name war3map.j || exit 1
-			    wc3 "$(realpath base.w3x)" &
-			}
-
-			function jhcr_update {
-			    pjass ${common-j}/common.j blizzard.j "$1" || exit 1
-			    ${jhcr-drv}/bin/jhcr update "$1" --preload-path ~/Library/Application\ Support/Blizzard/Warcraft\ III/CustomMapData/
-			}
-
-		    '';
-		    packages = [
+		    buildInputs = [
 			pkgs.lua5_3_compat
 			pjass-drv
 			jhcr-drv
 			mpq-drv
 			compressmpq-drv
+			wc3
+			jhcr-start
+			jhcr-update
 		    ];
 		};
             }
