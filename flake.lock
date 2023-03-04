@@ -74,11 +74,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1677365099,
-        "narHash": "sha256-ph8twD2WanFCD1iPm3gAcENs1M6aQmsBSU9GPNkcm2s=",
+        "lastModified": 1677855196,
+        "narHash": "sha256-uVtOh9yl0y3ZrcQBOEsJyMytSfkyhNwir7pm28hQKuc=",
         "owner": "lep",
         "repo": "jhcr",
-        "rev": "f2c5e10778cf471da30026bf267ac2b9785fb68c",
+        "rev": "81cf684c2b2d1310e1380e1031b6fa11a9c3452c",
         "type": "github"
       },
       "original": {
@@ -97,23 +97,26 @@
         ]
       },
       "locked": {
-        "lastModified": 1677083301,
-        "narHash": "sha256-bzOqkUPzXqz97WmuA4vGABPfyxbSN4NcR+atl4INn1w=",
-        "type": "git",
-        "url": "file:/Users/lep/dev/mpq"
+        "lastModified": 1677930309,
+        "narHash": "sha256-pwW12H3Sd+egspa91pPduvYT3jGpmaK9onZghS87KMk=",
+        "owner": "lep",
+        "repo": "mpq-hs",
+        "rev": "97ceb921d2d5fc374037d52cfc94b5e0c40e0ec2",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:/Users/lep/dev/mpq"
+        "owner": "lep",
+        "repo": "mpq-hs",
+        "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1677351101,
-        "narHash": "sha256-YEVIJJfeewH1pjmGEoVs0bU6lyI5TCPHIXW/kIItjL4=",
+        "lastModified": 1677931118,
+        "narHash": "sha256-r1P2/PU9Yyhf5bHngcdeTZROcO/sk+rqtudg+c7Vsww=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "84401155e3c99ed730dd798cc2bc96432ffb7941",
+        "rev": "45e44c56f115a33b034f3fcccdec05040438a75a",
         "type": "github"
       },
       "original": {

@@ -4,12 +4,10 @@
 	flake-utils.url = "github:numtide/flake-utils";
 
 	pjass.url = "github:lep/pjass";
-	#pjass.url = "git+file:/Users/lep/dev/pjass";
 	pjass.inputs.nixpkgs.follows = "nixpkgs";
 	pjass.inputs.flake-utils.follows = "flake-utils";
 
 	jhcr.url = "github:lep/jhcr";
-	#jhcr.url = "git+file:/Users/lep/dev/jass-hot-code-reload";
 	jhcr.inputs.nixpkgs.follows = "nixpkgs";
 	jhcr.inputs.flake-utils.follows = "flake-utils";
 	jhcr.inputs.common-j.follows = "common-j";
@@ -18,7 +16,7 @@
 	common-j.inputs.nixpkgs.follows = "nixpkgs";
 	common-j.inputs.flake-utils.follows = "flake-utils";
 
-	mpq.url = "git+file:/Users/lep/dev/mpq";
+	mpq.url = "github:lep/mpq-hs";
 	mpq.inputs.nixpkgs.follows = "nixpkgs";
 	mpq.inputs.flake-utils.follows = "flake-utils";
 
